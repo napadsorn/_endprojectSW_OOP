@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Dropdownlist Type Subtype</title>
+    <meta charset="utf-8">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	var rows = 1;
+	$("#createRows").click(function(){
+						var tr = "<tr>";
+						 <div id="wrapper">        
+        <div class="container" style="margin-top: 100px;">
+            <!-- dropdownlist Type -->
+            <div class="row">
+                <div class="col-md-1"><label>คณะ</label></div>
+                <div class="col-md-3">
+                    <select id="ddltype" class="form-control" onchange="onTypeChange($(ddlsubtype),$(ddlprod));"></select>
+                </div>
+            
+                <div class="col-md-1"><label>สาขาวิชา</label></div>
+                <div class="col-md-3">
+                    <select id="ddlsubtype" class="form-control" onchange="onSubtypeChange($(ddlprod));">
+                        <option value="0"> --- โปรดเลือกสาขาวิชา --- </option>
+                    </select>
+                </div>            
+            
+                <div class="col-md-1"><label>ชื่อบุคลากร</label></div>
+                <div class="col-md-3">
+                    <select id="ddlprod" class="form-control">
+                        <option value="0"> --- โปรดเลือกชื่อบุคลากรผู้ร่วมทีมวิจัย --- </option>
+                    </select>
+                
+            </div></div> 
+               
+          </div>    </div>
+               
+						$('#myTable > tbody:last').append(tr);
+					
+						$('#hdnCount').val(rows);
+						rows = rows + 1;
+		});
+
+		$("#deleteRows").click(function(){
+				if ($("#myTable tr").length != 1) {
+					 $("#myTable tr:last").remove();
+				}
+		});
+
+		
+	});
+</script>
+	
+</head>
+
+<body>
+    <div id="wrapper">        
+        <div class="container" style="margin-top: 100px;">
+            <!-- dropdownlist Type -->
+            <div class="row">
+                <div class="col-md-1"><label>คณะ</label></div>
+                <div class="col-md-3">
+                    <select id="ddltype" class="form-control" onchange="onTypeChange($(ddlsubtype),$(ddlprod));"></select>
+                </div>
+            
+                <div class="col-md-1"><label>สาขาวิชา</label></div>
+                <div class="col-md-3">
+                    <select id="ddlsubtype" class="form-control" onchange="onSubtypeChange($(ddlprod));">
+                        <option value="0"> --- โปรดเลือกสาขาวิชา --- </option>
+                    </select>
+                </div>            
+            
+                <div class="col-md-1"><label>ชื่อบุคลากร</label></div>
+                <div class="col-md-3">
+                    <select id="ddlprod" class="form-control">
+                        <option value="0"> --- โปรดเลือกชื่อบุคลากรผู้ร่วมทีมวิจัย --- </option>
+                    </select>
+                
+            </div></div> 
+               <p align="center"  > <input type="button"  id="createRows" value="Add"> 
+				<input type="button"  id="deleteRows" value="Del"> </p>   
+			<input type="hidden" id="hdnCount" name="hdnCount">
+          </div>    </div>
+               
+   
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+            // on page loaded
+            callAjax("faculty","","",$("#ddltype"));
+        });
+        function onTypeChange(ddlsubtypeobj,ddlprodobj) {
+            callAjax("sakawicha",$("#ddltype").val(),"",ddlsubtypeobj);            
+            clearOptionItem(ddlprodobj)
+        }
+        function onSubtypeChange(ddlprodobj) {
+            callAjax("nameperson",$("#ddltype").val(),$("#ddlsubtype").val(),ddlprodobj);
+        }
+        function clearOptionItem(ddlobj) {
+            $(ddlobj).find("option").remove().end();
+            $(ddlobj).append("<option value='0'> --- Please select item --- </option>");
+        }
+        function callAjax(s_mode,s_facid,s_sakaid,ddlobj) {
+            $.ajax({
+                type        : "GET" ,
+                url         : "gen_datasource.php" ,
+                data        : { mode : s_mode , fac_id : s_facid , saka_id : s_sakaid } ,
+                dataType    : "json" ,
+                success     : function(data) {
+                    if (data.output != false) {
+                        $(ddlobj).find("option").remove().end();
+                        var option_val = data.output.split("|");                        
+                        for (j = 0 ;  j < option_val.length ; j++) {
+                            $(ddlobj).append(option_val[j]);
+                        }
+                    }
+                },
+                error       : function(data) {
+                    console.log( data.statusText + '\n' + data.responseText);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
