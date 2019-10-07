@@ -10,6 +10,9 @@
 </head>
 
 <body>
+<script src="respond.js"></script>
+<form action="?act=test" method="post"> <!--ส่งค่า post ไปหน้าเดิม --></from>
+	
     <div id="wrapper">        
        
             <!-- dropdownlist Type -->
@@ -33,8 +36,8 @@
                     </select>
                 
             </div></div> 
-               <p align="center"  > <input type="button" name="button" id="createRows" value="Add"> 
-				<input type="button" name="button2" id="deleteRows" value="Del"> </p>       
+      <p align="center"  > <input type="button" name="button" id="btnP" value="เพิ่มรายชื่อผู้ร่วมวิจัย"></p>       
+		<tr><td colspan="3"><center>รายการที่เพิ่ม</center></td></tr>
           </div>    
                
    
