@@ -21,7 +21,7 @@
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-13"> <br />
-      <h4 align="center"> จัดตั้งโครงการใหม่ </h4>
+      <h4 align="center"> เพิ่มโครงการใหม่ </h4>
       <hr />
       <form action="เพิ่มข้อมูลโครงการลงdata_project.php" method="POST" enctype="multipart/form-data"  name="addprd" class="form-horizontal" id="addprd">
       

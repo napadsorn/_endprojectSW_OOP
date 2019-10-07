@@ -33,9 +33,9 @@
                     </select>
                 
             </div></div> 
-               <p align="center"  > <input type="button" name="button" id="createRows" value="เพิ่มรายชื่อบุคลากร"> 
-				    <tr><td colspan="3"><center>รายการที่เพิ่ม</center></td></tr>
-          </div>   
+               <p align="center"  > <input type="button" name="button" id="createRows" value="Add"> 
+				<input type="button" name="button2" id="deleteRows" value="Del"> </p>       
+          </div>    
                
    
     <script src="https://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript"></script>
