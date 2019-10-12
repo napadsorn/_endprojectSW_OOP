@@ -57,7 +57,7 @@ body,td,th {
     <!-- main body --> 
     <!-- ################################################################################################ -->
 
-		<?php  include "show_article.php";  ?>
+		<?php  include "อำเภอพังโคน.php";  ?>
       <li class="one_third first"></li>
       <li class="one_third"></li>
       <li class="one_third"></li>

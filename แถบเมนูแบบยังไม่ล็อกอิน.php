@@ -19,9 +19,11 @@ body,td,th {
 </style><form></form>
 </head>
 <body id="top">
+	
 	<div class="wrapper row2">
   <nav id="mainav" class="hoc clear"> 
     <!-- ################################################################################################ -->
+	  
     <ul class="clear">
 <li class="active"><a href="index.html">หน้าแรก</a></li>
 <li class="active"><a href="index.html">โครงการทั้งหมด</a></li>
@@ -37,7 +39,7 @@ body,td,th {
           <li><a href="pages/sidebar-left.html">อำเภอบ้านม่วง</a></li>
           <li><a href="pages/sidebar-right.html">อำเภอโพนนาแก้ว</a></li>
           <li><a href="pages/basic-grid.html">อำเภอพรรณานิคม</a></li>
-			<li><a href="pages/gallery.html">อำเภอพังโคน</a></li>
+			<li><a href="show_อำเภอพังโคน.php">อำเภอพังโคน</a></li>
           <li><a href="pages/full-width.html">อำเภอภูพาน</a></li>
           <li><a href="pages/sidebar-left.html">อำเภอเมืองสกลนคร</a></li>
           <li><a href="pages/sidebar-right.html">อำเภอวาริชภูมิ</a></li>
