@@ -1,18 +1,21 @@
-	<?php  include "แบรนเนอร์และเมนูบุคลากร.php";  ?>
+
+<?php  include "แถบเมนูแบบยังไม่ล็อกอิน.php";  ?>
 
 	<div class="wrapper row3">
 	
+  
+    <!-- main body --> 
     <!-- ################################################################################################ -->
 
-		<?php  include "บุคลากรshow_article.php";  ?>
+		<?php  include "อำเภอเต่างอย.php";  ?>
       <li class="one_third first"></li>
       <li class="one_third"></li>
       <li class="one_third"></li>
-    </ul>
+    
     <!-- ################################################################################################ --> 
     <!-- / main body -->
     <div class="clear"></div>
-  
+
 	
 </div>
 	

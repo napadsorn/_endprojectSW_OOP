@@ -20,17 +20,7 @@ body,td,th {
   <div id="topbar" class="hoc clear"> 
     <!-- ################################################################################################ -->
     
-    <div class="fl_right">
-      <ul>
-        <li><a href="#"><em class="fa fa-lg fa-home"></em></a></li>
-        <li>
-          <h3><a href="login.html">Login</a></h3>
-        </li>
-        <li>
-          <h3><a href="#">Register</a></h3>
-        </li>
-      </ul>
-    </div>
+    		  <?php include("แถบเมนูบนสุด.php"); ?>
     <!-- ################################################################################################ --> 
   </div>
 </div>
@@ -49,7 +39,6 @@ body,td,th {
   <nav id="mainav" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <ul class="clear">
-<li class="active"><a href="หน้าแรกบุคลากร.php">หน้าแรก</a></li>
 		
 <li class="active"><a href="หน้าแรกบุคลากร.php">โครงการทั้งหมด</a></li>
 		
@@ -57,24 +46,24 @@ body,td,th {
   <input type="hidden" name="hiddenField" id="hiddenField">
   โครงการอำเภอต่างๆ</a>
         <ul>
-          <li><a href="pages/gallery.html">อำเภอกุดบาก</a></li>
-          <li><a href="pages/full-width.html">อำเภอกุสุมาลย์</a></li>
-          <li><a href="pages/sidebar-left.html">อำเภอโคกศรีสุพรรณ</a></li>
-          <li><a href="pages/sidebar-right.html">อำเภอคำตากล้า</a></li>
-          <li><a href="pages/basic-grid.html">อำเภอเจริญศิลป์</a></li>
-			<li><a href="pages/gallery.html">อำเภอเต่างอย</a></li>
-          <li><a href="pages/full-width.html">อำเภอนิคมน้ำอูน</a></li>
-          <li><a href="pages/sidebar-left.html">อำเภอบ้านม่วง</a></li>
-          <li><a href="pages/sidebar-right.html">อำเภอโพนนาแก้ว</a></li>
-          <li><a href="pages/basic-grid.html">อำเภอพรรณานิคม</a></li>
-			<li><a href="pages/gallery.html">อำเภอพังโคน</a></li>
-          <li><a href="pages/full-width.html">อำเภอภูพาน</a></li>
-          <li><a href="pages/sidebar-left.html">อำเภอเมืองสกลนคร</a></li>
-          <li><a href="pages/sidebar-right.html">อำเภอวาริชภูมิ</a></li>
-          <li><a href="pages/basic-grid.html">อำเภอสว่างแดนดิน</a></li>
-			<li><a href="pages/sidebar-left.html">อำเภอส่องดาว</a></li>
-          <li><a href="pages/sidebar-right.html">อำเภออากาศอำนวย</a></li>
-          <li><a href="pages/basic-grid.html">อำเภอวานรนิวาส</a></li>
+          <li><a href="show_อำเภอกุดบาก.php">อำเภอกุดบาก</a></li>
+          <li><a href="show_อำเภอกุสุมาลย์.php">อำเภอกุสุมาลย์</a></li>
+          <li><a href="show_อำเภอโคกศรีสุพรรณ.php">อำเภอโคกศรีสุพรรณ</a></li>
+          <li><a href="show_อำเภอคำตากล้า.phph">อำเภอคำตากล้า</a></li>
+          <li><a href="บุคลากรshow_อำเภอเจริญศิลป์.php">อำเภอเจริญศิลป์</a></li>
+			<li><a href="show_อำเภอเต่างอย.php">อำเภอเต่างอย</a></li>
+          <li><a href="show_อำเภอนิคมน้ำอูน.php">อำเภอนิคมน้ำอูน</a></li>
+          <li><a href="show_อำเภอบ้านม่วง.php">อำเภอบ้านม่วง</a></li>
+          <li><a href="show_อำเภอโพนนาแก้ว.php">อำเภอโพนนาแก้ว</a></li>
+          <li><a href="show_อำเภอพรรณานิคม.php">อำเภอพรรณานิคม</a></li>
+			<li><a href="show_อำเภอพังโคน.php">อำเภอพังโคน</a></li>
+          <li><a href="show_อำเภอภูพาน.php">อำเภอภูพาน</a></li>
+          <li><a href="show_อำเภอเมืองสกลนคร.php">อำเภอเมืองสกลนคร</a></li>
+          <li><a href="show_อำเภอวาริชภูมิ.php">อำเภอวาริชภูมิ</a></li>
+          <li><a href="show_อำเภอสว่างแดนดิน.php">อำเภอสว่างแดนดิน</a></li>
+			<li><a href="show_อำเภอส่องดาว.php">อำเภอส่องดาว</a></li>
+          <li><a href="show_อำเภออากาศอำนวย.php">อำเภออากาศอำนวย</a></li>
+          <li><a href="show_อำเภอวานรนิวาส.php">อำเภอวานรนิวาส</a></li>
 			
 
         </ul>

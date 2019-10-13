@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<?php  include "แถบเมนูแบบยังไม่ล็อกอิน.php";  ?>
+<!DOCTYPE html">
+<?php  include "แถบเมนูคนทั่วไป.php";  ?>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,7 +23,7 @@ $author = $row['leader'];
 $title = $row['nameproject'];
 $article = $row['detail'];
 ?>
-
+ 
 <table>
 <?php
 echo "<tr>";

@@ -1,5 +1,33 @@
-<!DOCTYPE html>
-<?php  include "แถบเมนูแบบยังไม่ล็อกอิน.php";  ?>
+<!doctype html>
+
+<html>
+<head>
+<title>Algenius</title>
+<meta charset="utf-8">
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<style type="text/css">
+body,td,th {
+    font-size: 16px;
+}
+</style><form></form>
+</head>
+<body id="top">
+	
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row0">
+  <div id="topbar" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+   <?php  include "แถบเมนูบนสุด.php";  ?>
+    <!-- ################################################################################################ --> 
+  </div>
+</div>
+	<?php  include "แถบเมนูบุคลากร.php";  ?>
+	
+<!DOCTYPE html">
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -23,7 +51,7 @@ $author = $row['leader'];
 $title = $row['nameproject'];
 $article = $row['detail'];
 ?>
-
+ 
 <table>
 <?php
 echo "<tr>";
