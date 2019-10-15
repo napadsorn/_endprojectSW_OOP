@@ -6,16 +6,17 @@ require_once('connect.php');
 	//รับชื่อไฟล์จากฟอร์ม 
 	$namepro = $_POST['namepro'];
 	$p_name = $_POST['p_name'];
-   // $p_name2 = $_POST['p_name2'];
+    $p_name2 = $_POST['p_name2'];
 	$p_detail = $_POST['p_detail'];
 	$where = $_POST['where'];
 	
  
 	$sql ="INSERT INTO data_project
-					(nameproject,leader,detail,district) 
+					(nameproject,leader,team,detail,district) 
 					VALUES
 					('$namepro',
 					'$p_name',
+					'$p_name2',
 					'$p_detail',
 					'$where')";
 	$result = mysqli_query($conn, $sql) or die ("Error in query: $sql " . mysqli_error());
