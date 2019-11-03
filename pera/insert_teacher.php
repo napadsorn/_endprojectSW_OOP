@@ -11,13 +11,22 @@
 	}
 ?>
 
+ <?php
+         $strSQL ="select MAX(id_project) AS Num from data_project ";
+         $objQuery = mysqli_query($conn,$strSQL) or die ("Error in query: $strSQL " . mysqli_error());
+         $objResult = mysqli_fetch_array($objQuery);
+         if($objResult)
+           {
+	        $num = $objResult['Num'];
+	         if($num==NULL){
+	         $num = 0;			
+	       }
+	        $newid = $num+1 ; // id+1
+		 } 
+?>
 <?php
-	$sql = "select MAX(id) as max_id from tbl_teacher";
-	$result = mysqli_query($conn, $sql);
-	$row_max_id = mysqli_fetch_array($result);
-	$id = $row_max_id['max_id'];
-
-	$sql = "insert into tbl_teacher (id, value_1, value_2, value_3) value($id+1,'".$_REQUEST['Sval_1']."','".$_REQUEST['Sval_2']."','".$_REQUEST['Sval_3']."')";
+	$sql = "insert into tbl_teacher (id, value_1, value_2, value_3) value
+	( $newid,'".$_REQUEST['Sval_1']."','".$_REQUEST['Sval_2']."','".$_REQUEST['Sval_3']."')";
 	$result = mysqli_query($conn,$sql);
 	//if ($result) { echo "Inserted\n";}
 ?>
