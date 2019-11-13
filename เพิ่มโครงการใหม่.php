@@ -91,20 +91,23 @@
           </div>
           <p>&nbsp;</p>
         </div>
+		  
 		  <?php
          $strSQL ="select MAX(id_project) AS Num from data_project ";
-      $objQuery = mysqli_query($conn,$strSQL) or die ("Error in query: $strSQL " . mysqli_error());
-      $objResult = mysqli_fetch_array($objQuery);
-if($objResult)
-{
-	$num = $objResult['Num'];
-	if($num==NULL){
-	       $num = 0;			
-	}
-	$newid = $num+1 ; // id+1
-}?>
+         $objQuery = mysqli_query($conn,$strSQL) or die ("Error in query: $strSQL " . mysqli_error());
+         $objResult = mysqli_fetch_array($objQuery);
+         if($objResult)
+           {
+	        $num = $objResult['Num'];
+	         if($num==NULL){
+	         $num = 0;			
+	       }
+	        $newid = $num+1 ; // id+1
+           }?>
         <input type="text" name="txt_sent_item_id" id="txt_sent_item_id" value="<?=$newid?>" style="width:25px; text-align:right;" readonly>
        
+		  <?php  //ผู้โพส
+		  ?>
         
         
         <div class="form-group">

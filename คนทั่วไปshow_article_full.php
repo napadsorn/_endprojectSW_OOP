@@ -23,10 +23,6 @@ $title = $row['nameproject'];
 $article = $row['detail'];
 $dis = $row['district'];
 $lo = $row['location'];
-	
-	$result2 = mysqli_query($conn,"select * from data_project where id_project = '$tbl_teacher' order by id_project");
-	$row2 = mysqli_fetch_array($result2);
- 
 ?>
 
 <table>
