@@ -5,8 +5,18 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title></title>
         <link rel="stylesheet" type="text/css" href="style.css">
+
+		<style>
+			input.btn  {
+                        width: 200px;
+                        margin: 0 auto;
+                        display: block;
+                       }
+		</style>
     </head>
-    <body>
+	
+    <body>	
+		<form class ="box" action="บันทึกไอดีผู้ใช้ไปที่ตาราง.php" method="post">
 <div class="content">
 <?php
 include 'connect.php';
@@ -27,15 +37,22 @@ $lo = $row['location'];
 
 <table>
 <?php
+	
 echo "<tr>";
 echo "<td>";
  
-
-echo "<div id='nameproject'><h2>$title</h2></div>";	 //ชื่อโครงการ
-echo "หัวหน้าทีมวิจัย <div id='leader'><h5>$author</h5></div>"; //หัวหน้าทีมวิจัย
-echo "รายละเอียดโครงการ <div id='detail'>$article</div>"; //รายละเอีย
+echo "<div id='nameproject'><font color='#000000>$title</h2></font></div>";	 //ชื่อโครงการ 
+echo "หัวหน้าทีมวิจัย <div id='leader'>$author</div>"; //หัวหน้าทีมวิจัย
+		echo"<BR></BR>";
+	
+echo "รายละเอียดโครงการ <div id='detail'>$article</div>"; //รายละเอียด
+	echo"<BR></BR>";
+	
 echo "อำเภอ <div id='district'>$dis</div>";
-echo "สถานที่ที่ลงพื้นที่ <div id='location'>$lo</div>";	
+	echo"<BR></BR>";
+	
+echo "สถานที่ที่ลงพื้นที่ <div id='location'>$lo</div>";
+		echo"<BR></BR>";
 echo " <div id='float_r'><font color='#64711F'>Post By:</font> $author</div>";
  
 echo "</td>";
@@ -43,6 +60,11 @@ echo "</tr>";
 ?>
 </table>
 </div>
+		<div>			
+<input type="submit" name="submit" id="submit" class="btn" align ="center" value="ลงทะเบียนร่วมโครงการ" />
+
+			<input type="hidden" name="member_id" id="member_id" value="$_SESSION['id']"/>
+	</div>
 		
 <!-- ################################################################################################ --> 
 <!-- ################################################################################################ --> 

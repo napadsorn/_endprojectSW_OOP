@@ -1,13 +1,20 @@
-
+<?php 
+    session_start();
+    if (!$_SESSION['userid']) {
+        header("Location: หน้าแรกแบบทั่วไป.php");
+    } else {
+?>
     <div class="fl_right">
-		
-      <ul>
-        <li><a href="#"><em class="fa fa-lg fa-home"></em></a></li>
+	  
+      <ul> 
+        <li><h3>สวัสดี   <?php echo $_SESSION['user'];?></h3> </li>
         <li>
           
         </li>
         <li>
-          <h3><a href="หน้าแรกแบบทั่วไป.php">ออกจากระบบ</a></h3>
+         
+          <h3><a href="logoutb.php">ออกจากระบบ</a></h3>
         </li>
       </ul>
     </div>
+    <?php } ?>

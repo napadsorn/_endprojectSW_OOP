@@ -26,9 +26,9 @@ body,td,th {
     
     <div class="fl_right">
       <ul>
-        <li><a href="#"><em class="fa fa-lg fa-home"></em></a></li>
+      <!--//ไอคอนรูปโฮม  <li><a href="#"><em class="fa fa-lg fa-home"></em></a></li> //--> 
         <li>
-          <h3><a href="login.php">Login</a></h3>
+          <h3><a href="loginb.php">Login</a></h3>
         </li>
         <li>
           <h3><a href="register.php">Register</a></h3>
