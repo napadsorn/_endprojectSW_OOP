@@ -1,5 +1,45 @@
-<!DOCTYPE html>
-<?php  include "แถบเมนูแบบยังไม่ล็อกอิน.php";  ?>
+<!doctype html>
+
+<html>
+<head>
+<title>Algenius</title>
+<meta charset="utf-8">
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<style type="text/css">
+body,td,th {
+    font-size: 16px;
+}
+</style><form></form>
+</head>
+<body id="top">
+	
+	<script language="javascript">
+function fncSubmit(strPage)
+{
+	if(strPage == "edit")
+	{
+		document.form1.action="EditProject.php";
+	}
+	
+	if(strPage == "delete")
+	{
+		document.form1.action="page2.cgi";
+	}	
+	
+	document.form1.submit();
+}
+</script>
+	
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+
+	    	
+	<?php  include "แถบเมนูบุคลากร.php";  ?>
+	
+<!DOCTYPE html">
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -7,6 +47,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
+		<form action="MyProjectPost_ShowArticleFull.php" method="post" name="form1">
 <div class="content">
 <?php
 include 'connect.php';
@@ -51,14 +92,24 @@ echo "อำเภอ <div id='district'>$dis</div>";
 echo "สถานที่ที่ลงพื้นที่ <div id='location'>$lo</div>";
 		echo"<BR></BR>";
 echo " <div id='float_r'><font color='#64711F'>Post By:</font> $author</div>";
- echo"<BR></BR>";
-echo "<font color='#911300'>********************กรุณาเข้าสู่ระบบก่อนลงทะเบียน********************</font>";		
+ 
 echo "</td>";
 echo "</tr>";
-
 ?>
 </table>
-		</div>
+	<div>			
+		<input type="hidden" name="member_id" id="member_id" value="<?=$_SESSION['userid']?>"/>
+		<input type="hidden" name="project_id" id="project_id" value="<?=$_GET['id_project']?>"/>		
+	</div>
+	
+<input name="btnButton1" type="button" value="แก้ไขโครงการ" class="btn"   onClick="JavaScript:fncSubmit('edit')"/>
+<input name="btnButton2" type="button" value="ลบประกาศ"  class="btn"  onClick="JavaScript:fncSubmit('delete')"/>
+	
+</div>
+	
+		
+		
+		
 <!-- ################################################################################################ --> 
 <!-- ################################################################################################ --> 
 <!-- ################################################################################################ --> 
@@ -69,3 +120,4 @@ echo "</tr>";
 <script src="layout/scripts/jquery.mobilemenu.js"></script>
     </body>
 </html>
+	</form>

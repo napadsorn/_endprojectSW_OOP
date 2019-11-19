@@ -1,4 +1,4 @@
-	<?php  include "แบรนเนอร์และเมนูบุคลากร.php";  ?>
+	<?php  include "แถบเมนูบุคลากร.php";  ?>
 
 	<div class="wrapper row3">
 	

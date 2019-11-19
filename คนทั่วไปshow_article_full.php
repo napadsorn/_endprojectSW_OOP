@@ -1,3 +1,22 @@
+<!doctype html>
+
+<html>
+<head>
+<title>Algenius</title>
+<meta charset="utf-8">
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<style type="text/css">
+body,td,th {
+    font-size: 16px;
+}
+</style><form></form>
+</head>
+	<?php 
+    session_start();
+//echo "".$_SESSION['userid']."";  แสดงเลขไอดี
+?>
+
 <!DOCTYPE html">
 <?php  include "แถบเมนูคนทั่วไป.php";  ?>
 <html>
@@ -16,7 +35,7 @@
     </head>
 	
     <body>	
-		<form class ="box" action="บันทึกไอดีผู้ใช้ไปที่ตาราง.php" method="post">
+		<form class ="box" action="บันทึกไอดีผู้ใช้ไปที่ตาราง.php" method="get">
 <div class="content">
 <?php
 include 'connect.php';
@@ -33,6 +52,8 @@ $title = $row['nameproject'];
 $article = $row['detail'];
 $dis = $row['district'];
 $lo = $row['location'];
+$team = $row['team'];
+	
 ?>
 
 <table>
@@ -41,8 +62,11 @@ $lo = $row['location'];
 echo "<tr>";
 echo "<td>";
  
-echo "<div id='nameproject'><font color='#000000>$title</h2></font></div>";	 //ชื่อโครงการ 
+echo "<div id='nameproject'><h2>$title</h2></div>";	 //ชื่อโครงการ 
 echo "หัวหน้าทีมวิจัย <div id='leader'>$author</div>"; //หัวหน้าทีมวิจัย
+		echo"<BR></BR>";
+	
+echo "ผู้ร่วมวิจัย <div id='leader'>$team</div>"; //หัวหน้าทีมวิจัย
 		echo"<BR></BR>";
 	
 echo "รายละเอียดโครงการ <div id='detail'>$article</div>"; //รายละเอียด
@@ -61,9 +85,10 @@ echo "</tr>";
 </table>
 </div>
 		<div>			
-<input type="submit" name="submit" id="submit" class="btn" align ="center" value="ลงทะเบียนร่วมโครงการ" />
-
-			<input type="hidden" name="member_id" id="member_id" value="$_SESSION['id']"/>
+			
+		<input type="hidden" name="member_id" id="member_id" value="<?=$_SESSION['userid']?>"/>
+		<input type="hidden" name="project_id" id="project_id" value="<?=$_GET['id_project']?>"/>
+<input type="submit" name="submit" id="submit" class="btn" align ="center" value="ลงทะเบียนร่วมโครงการ" ;/>
 	</div>
 		
 <!-- ################################################################################################ --> 

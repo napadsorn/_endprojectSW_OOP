@@ -17,13 +17,8 @@ body,td,th {
 <!-- ################################################################################################ --> 
 <!-- ################################################################################################ --> 
 <!-- ################################################################################################ -->
-<div class="wrapper row0">
-  <div id="topbar" class="hoc clear"> 
-    <!-- ################################################################################################ -->
-   <?php  include "แถบเมนูบนสุด.php";  ?>
-    <!-- ################################################################################################ --> 
-  </div>
-</div>
+
+	    	
 	<?php  include "แถบเมนูบุคลากร.php";  ?>
 	
 <!DOCTYPE html">
@@ -52,19 +47,32 @@ $title = $row['nameproject'];
 $article = $row['detail'];
 $dis = $row['district'];
 $lo = $row['location'];
+$team = $row['team'];
+	
 ?>
 
 <table>
 <?php
+	
 echo "<tr>";
 echo "<td>";
  
-
-echo "<div id='nameproject'><h2>$title</h2></div>";	 //ชื่อโครงการ
-echo "หัวหน้าทีมวิจัย <div id='leader'><h5>$author</h5></div>"; //หัวหน้าทีมวิจัย
-echo "รายละเอียดโครงการ <div id='detail'>$article</div>"; //รายละเอีย
+echo "<div id='nameproject'><h2>$title</h2></div>";	 //ชื่อโครงการ 
+echo "หัวหน้าทีมวิจัย <div id='leader'>$author</div>"; //หัวหน้าทีมวิจัย
+		echo"<BR></BR>";
+	
+echo "ผู้ร่วมวิจัย <div id='leader'>$team</div>"; //หัวหน้าทีมวิจัย
+		echo"<BR></BR>";
+	
+	
+echo "รายละเอียดโครงการ <div id='detail'>$article</div>"; //รายละเอียด
+	echo"<BR></BR>";
+	
 echo "อำเภอ <div id='district'>$dis</div>";
-echo "สถานที่ที่ลงพื้นที่ <div id='location'>$lo</div>";	
+	echo"<BR></BR>";
+	
+echo "สถานที่ที่ลงพื้นที่ <div id='location'>$lo</div>";
+		echo"<BR></BR>";
 echo " <div id='float_r'><font color='#64711F'>Post By:</font> $author</div>";
  
 echo "</td>";

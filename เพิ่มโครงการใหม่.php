@@ -15,7 +15,7 @@
 
 <body >
 	<?php
-    include "แบรนเนอร์และเมนูบุคลากร.php";
+    include "แถบเมนูบุคลากร.php";
 ?>
 <div class="container">
   <div class="row">
@@ -48,7 +48,8 @@
        <div class="form-group">
           <div class="col-sm-12">
             <p> ผู้ร่วมวิจัย</p> 
-			  <?php include("selectname.php"); ?>
+			  <?php //include("selectname.php"); ?>
+			   <textarea  name="p_team" class="form-control"  rows="10"  required placeholder="ผู้ร่วมโครงการ"></textarea>
 			  </div>
         </div>
         
@@ -86,7 +87,7 @@
               </select>
             </p>
             <p>สถานที่สำหรับเข้าร่วมงาน
-               <input type="text" name="textfield2" rows="3" class="form-control">
+               <input type="text" name="where" rows="3" class="form-control">
             </p>
           </div>
           <p>&nbsp;</p>

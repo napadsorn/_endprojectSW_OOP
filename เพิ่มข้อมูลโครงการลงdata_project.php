@@ -1,23 +1,28 @@
 <!doctype html>
 <?php
 require_once('connect.php');
- 
+ session_start(); //รับค่าไอดียุเซอจากตอนล้อกอิน
     
 	//รับชื่อไฟล์จากฟอร์ม 
+    $userid = $_SESSION['userid'];
 	$namepro = $_POST['namepro'];
 	$p_name = $_POST['p_name'];
-   // $p_name2 = $_POST['p_name2'];
+    $p_team = $_POST['p_team']; 
 	$p_detail = $_POST['p_detail'];
 	$where = $_POST['where'];
+    
+
 	
  
 	$sql ="INSERT INTO data_project
-					(nameproject,leader,detail,district) 
+					(nameproject,leader,team,detail,district,author) 
 					VALUES
 					('$namepro',
 					'$p_name',
+					'$p_team',
 					'$p_detail',
-					'$where')";
+					'$where',
+					'$userid')";
 	$result = mysqli_query($conn, $sql) or die ("Error in query: $sql " . mysqli_error());
  
 	//table2
