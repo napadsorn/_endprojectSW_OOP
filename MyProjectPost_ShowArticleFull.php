@@ -24,7 +24,15 @@ function fncSubmit(strPage)
 	
 	if(strPage == "delete")
 	{
-		document.form1.action="page2.cgi";
+		if(confirm('  กรุณายืนยันการลบโครงการอีกครั้ง !!!  '))
+			{
+			document.form1.action="DeleteMyPostProject.php";
+			}
+		else
+		{
+	return false;
+        }
+		
 	}	
 	
 	document.form1.submit();
@@ -103,7 +111,7 @@ echo "</tr>";
 	</div>
 	
 <input name="btnButton1" type="button" value="แก้ไขโครงการ" class="btn"   onClick="JavaScript:fncSubmit('edit')"/>
-<input name="btnButton2" type="button" value="ลบประกาศ"  class="btn"  onClick="JavaScript:fncSubmit('delete')"/>
+<input name="btnButton2" type="button" value="ลบประกาศ"  class="btn"  onClick="JavaScript:fncSubmit('delete')" />
 	
 </div>
 	

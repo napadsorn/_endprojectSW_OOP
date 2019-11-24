@@ -88,7 +88,7 @@ echo "</tr>";
 			
 		<input type="hidden" name="member_id" id="member_id" value="<?=$_SESSION['userid']?>"/>
 		<input type="hidden" name="project_id" id="project_id" value="<?=$_GET['id_project']?>"/>
-<input type="submit" name="submit" id="submit" class="btn" align ="center" value="ลงทะเบียนร่วมโครงการ" ;/>
+<input type="submit" name="submit" id="submit" class="btn" align ="center" onclick="return confirm('ยืนยันการลงทะเบียนเข้าร่วมโครงการ')"value="ลงทะเบียนร่วมโครงการ" ;/>
 	</div>
 		
 <!-- ################################################################################################ --> 

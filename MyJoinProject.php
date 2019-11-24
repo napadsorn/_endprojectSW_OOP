@@ -8,39 +8,35 @@
     </head>
     <body>
 <div class="content">
-<?php  include "connect.php";  ?>
-	
+<?php  include "connect.php";  ?>	
 <?php
 function cutstr($str, $maxstr='', $holder='') {
-if (strlen($str) > $maxstr) {
-$str = iconv_substr($str, 0, $maxstr, "UTF-8") . $holder;
-}
-return $str;
-}
-?>
-
+if (strlen($str) > $maxstr) {$str = iconv_substr($str, 0, $maxstr, "UTF-8") . $holder;}
+return $str;}?>
 <table>
 <?php
-
 session_start(); //รับค่าไอดียุเซอจากตอนล้อกอิน
 echo $_SESSION['userid'];//รับค่าไอดียูสเซอจากตอนล้อกอิน2
-	$userid = $_SESSION['userid'];
-$result = mysqli_query($conn,"select * data_participant where id = '$userid' RIGHT JOIN data_project ON data_participant.id_project = data_project.id_project ");
+$userid = $_SESSION['userid'];
 	
-//$num = mysqli_num_rows($result);//นับแถวทั้งหมดในตารางออกมา
-
+$result = mysqli_query($conn,"select * FROM data_participant RIGHT JOIN data_project ON data_participant.id_project = data_project.id_project WHERE id = '$userid' ");
+	
+if (!is_object($result)) {
+    die(mysqli_error($conn));// แก้ตัวแปร $link ให้ถูกต้องเอาเอง
+}
+	
 $i=0; // กำหนดให้ตัวแปร i = 0
-while($i < 100){ //ถ้า ตัวแปร i น้อยกว่า ตัวแปร num
-
-$row = mysqli_fetch_array($result);
+	   
+if (is_object($result)) {
+while($row = mysqli_fetch_array($result)) {
 $id_article = $row['id_project'];
 $author = $row['leader'];
 $title = $row['nameproject'];
 $article = $row['detail'];
+       
 
 echo "<tr>";
 echo "<td>";
-
 echo "<div id='title'><h2>
 <a href='show_article_full.php?id_project=$id_article'>
 $title
@@ -54,7 +50,7 @@ Read More>>
 echo "</td>";
 echo "</tr>";
 $i++; //ก็ให้บวกเพิ่มไปจนเท่ากับ ตัวแปร num
-}
+ }}
 ?>
 </table>
 

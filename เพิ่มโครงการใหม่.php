@@ -105,21 +105,22 @@
 	       }
 	        $newid = $num+1 ; // id+1
            }?>
-        <input type="text" name="txt_sent_item_id" id="txt_sent_item_id" value="<?=$newid?>" style="width:25px; text-align:right;" readonly>
+        <input type="hidden" name="txt_sent_item_id" id="txt_sent_item_id" value="<?=$newid?>" style="width:25px; text-align:right;" readonly>
        
-		  <?php  //ผู้โพส
-		  ?>
+		
+	      <?php  $userid = $_SESSION['userid']; ?>
+			  <input type="hidden" name="author" id="author" value="<?=$userid?>" />
         
-        
+        <div>
         <div class="form-group">
           <div class="col-sm-12">
-            <button type="submit" class="btn btn-primary" name="btnadd"> ประกาศ</button>
+            <button type="submit" class="btn btn-primary" align ="center" name="btnadd"> ประกาศ</button>
           </div>
 
           <li class="nav-item">
-                              <a href="หน้าแรกบุคลากร.php"> กลับหน้าหลัก </a>
+                              <a href="หน้าแรกบุคลากร.php" align ="center"> กลับหน้าหลัก </a>
           </li>
-         
+         </div>
 
         </div>
       </form>
